@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "165816460201",
+    "project_id": "flutterboardapp-595cb",
+    "storage_bucket": "flutterboardapp-595cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165816460201:android:5f0f1dbcf044dbca071ab8",
+        "android_client_info": {
+          "package_name": "com.example.flutterboardapp_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165816460201-usqn52e01ma7js8724ahkmqd1vbgafq2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWU8gI_VKwzN89JzkSPAlD03PClVdrmrw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165816460201-usqn52e01ma7js8724ahkmqd1vbgafq2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

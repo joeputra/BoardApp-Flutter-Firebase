@@ -11,8 +11,10 @@ class BoardApp extends StatefulWidget {
 
 class _BoardAppState extends State<BoardApp> {
   // ignore: non_constant_identifier_names
-  Stream FirestoreDb =
-      FirebaseFirestore.instance.collection('board').doc().snapshots();
+  Stream FirestoreDb = FirebaseFirestore.instance
+      .collection("board")
+      .doc()    
+      .snapshots();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +28,9 @@ class _BoardAppState extends State<BoardApp> {
               builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                 if (!snapshot.hasData) return const CircularProgressIndicator();
                 return ListView.builder(
-                    itemCount: snapshot.data!.docs.length,
+                    itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
-                      return Text(snapshot.data!.docs[index]['title']);
+                      return Text(snapshot.data!.doc()[index]['title']);
                     });
               }),
         ),

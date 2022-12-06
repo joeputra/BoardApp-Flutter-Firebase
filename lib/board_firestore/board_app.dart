@@ -16,22 +16,22 @@ class _BoardAppState extends State<BoardApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Community Board")),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height * 0.4,
-        child: StreamBuilder(
-            stream: FirestoreDb,
-            
-            builder: 
-            (context, AsyncSnapshot snapshot) {
-              if (!snapshot.hasData) return CircularProgressIndicator();
-              return ListView.builder(
-                  itemCount: snapshot.data!.docs.length,
-                  itemBuilder: (context, index) {
-                    return Text(snapshot.data!.docs[index]['title']);
-                  });
-            }),
+      appBar: AppBar(title: const Text("Community Board")),
+      body: Center(
+        child: Container(
+          // width: MediaQuery.of(context).size.width,
+          // height: MediaQuery.of(context).size.height * 0.4,
+          child: StreamBuilder<dynamic>(
+              stream: FirestoreDb,
+              builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                if (!snapshot.hasData) return const CircularProgressIndicator();
+                return ListView.builder(
+                    itemCount: snapshot.data!.docs.length,
+                    itemBuilder: (context, index) {
+                      return Text(snapshot.data!.docs[index]['title']);
+                    });
+              }),
+        ),
       ),
     );
   }
